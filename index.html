@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanish Ahmed - Data & Business Analyst Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            background: #2c3e50;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .project-links a:hover {
+            background: #667eea;
+            transform: translateY(-1px);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skill-category p {
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .download-cv {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .download-cv a {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .download-cv a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Thanish Ahmed</h1>
+            <p>Data & Business Analyst | Computer Science Graduate</p>
+            <div class="contact-links">
+                <a href="mailto:thanishahmed22@gmail.com">📧 Email</a>
+                <a href="tel:+94715930128">📱 Phone</a>
+                <a href="#" target="_blank">💼 LinkedIn</a>
+                <a href="#" target="_blank">🔗 GitHub</a>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="section">
+            <h2>About Me</h2>
+            <p>Computer Science graduate with foundational knowledge in data analysis, statistical methods, and database management. Experienced in Python, SQL, and data visualization tools through academic coursework and projects. Passionate about transforming data into actionable business insights.</p>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Hotel Revenue Analytics Project -->
+                <div class="project-card">
+                    <h3>Hotel Revenue Analytics & Booking Behavior Analysis</h3>
+                    <p>Comprehensive analysis of 27,500+ hotel booking records identifying $1.84M revenue loss from cancellations and no-shows. Applied statistical methods and delivered strategic business recommendations.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Statistical Analysis</span>
+                        <span class="tag">Data Visualization</span>
+                        <span class="tag">Business Intelligence</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">📊 View Report</a>
+                        <a href="#" target="_blank">📈 Dashboard</a>
+                        <a href="#" target="_blank">💻 Code</a>
+                    </div>
+                </div>
+
+                <!-- BI Framework Project -->
+                <div class="project-card">
+                    <h3>Business Intelligence & Predictive Analytics Framework</h3>
+                    <p>Analyzed Apple's data analytics strategy through comprehensive case study research. Applied Big Data Analytics 4Vs framework and evaluated machine learning applications in product development.</p>
+                    <div class="project-tags">
+                        <span class="tag">Business Intelligence</span>
+                        <span class="tag">Strategic Analysis</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Case Study</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">📄 Full Report</a>
+                        <a href="#" target="_blank">🔍 Analysis</a>
+                    </div>
+                </div>
+
+                <!-- MongoDB BI System -->
+                <div class="project-card">
+                    <h3>MongoDB Business Intelligence System</h3>
+                    <p>Designed scalable NoSQL database architecture for car wash service management. Developed aggregation pipelines for customer behavior analysis and service trend identification.</p>
+                    <div class="project-tags">
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">NoSQL</span>
+                        <span class="tag">Database Design</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">🗄️ Database Schema</a>
+                        <a href="#" target="_blank">📊 Queries</a>
+                        <a href="#" target="_blank">💻 Code</a>
+                    </div>
+                </div>
+
+                <!-- Intrusion Detection System -->
+                <div class="project-card">
+                    <h3>Hybrid Intrusion Detection System (ProSecure)</h3>
+                    <p>Developed real-time hybrid IDS achieving 96.5% accuracy across 12 network attack classes. Engineered end-to-end ML pipeline with user-friendly GUI and real-time alerts.</p>
+                    <div class="project-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">XGBoost</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">PyQt5</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">🛡️ System Demo</a>
+                        <a href="#" target="_blank">📊 Performance Report</a>
+                        <a href="#" target="_blank">💻 GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Technical Skills Section -->
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming & Databases</h3>
+                    <p>Python, JavaScript, SQL, MongoDB, PostgreSQL, MySQL</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Analysis & Visualization</h3>
+                    <p>Statistical Analysis, Data Cleaning, Advanced Excel, Tableau Public, Matplotlib/Seaborn</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Business Intelligence</h3>
+                    <p>KPI Development, Process Analysis, Dashboard Creation, Reporting</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <p>XGBoost, Scikit-learn, Feature Engineering, Model Evaluation</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <p>React.js, Node.js, HTML5, CSS3, Angular</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud & Tools</h3>
+                    <p>AWS (EC2, S3, Lambda), Git, Docker, Linux, Windows</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download CV Section -->
+        <div class="download-cv">
+            <a href="#" target="_blank">📄 Download Full CV</a>
+        </div>
+    </div>
+</body>
+</html>
